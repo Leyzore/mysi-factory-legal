@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>MYSI Factory - connecting</title><meta name="viewport" content="width=device-width,initial-scale=1">
+<body style="font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.6">
+<h1>Connecting to MYSI Factory...</h1>
+<p id="m">Returning you to the MYSI Factory app on your own computer.</p>
+<script>
+// Static relay: TikTok sends the user here (https). This page only forwards the query string to the app running on the
+// user's own computer (127.0.0.1). It stores nothing and sends nothing to any server.
+var q = window.location.search || "";
+if (q) { window.location.replace("http://127.0.0.1:4390/auth/tiktok/callback" + q); }
+else { document.getElementById("m").textContent = "Nothing to do here. Open MYSI Factory on your computer and click Connect."; }
+</script></body></html>
